@@ -18,6 +18,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Player hit something!");
+        Debug.Log("Player hit something! This is a test change");
     }
 }
