@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
+        //Haha dit is een test comment
         Vector3 movement = new Vector3(x, 0, z);
         transform.Translate(movement * (speed * Time.deltaTime));
     }
