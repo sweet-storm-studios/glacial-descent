@@ -2,22 +2,22 @@
     "name": "Player",
     "maps": [
         {
-            "name": "Player Control",
-            "id": "e2186ed9-9f75-4bea-a075-d616f634e364",
+            "name": "Player Movement",
+            "id": "90478aa4-8331-433f-b3f5-6c9ef03cf42b",
             "actions": [
                 {
-                    "name": "Trick",
+                    "name": "StandUp",
                     "type": "Button",
-                    "id": "6d7708af-eb60-4e73-bd9a-46f9cc2b77f6",
+                    "id": "6e362827-125a-4174-a223-0f9f771ae4e1",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "StandUp",
+                    "name": "Trick",
                     "type": "Button",
-                    "id": "69489b62-677b-433d-b7fe-d46860a923be",
+                    "id": "3566be31-5c0e-4495-90a6-63866a78147c",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -27,23 +27,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1bb13bbc-03b0-4a4a-8f85-444f5b0cd057",
-                    "path": "<Keyboard>/space",
-                    "interactions": "Hold(duration=0.3,pressPoint=0.4)",
+                    "id": "a7e8fd17-c6ea-4e2a-9557-120effc9255e",
+                    "path": "<Keyboard>/w",
+                    "interactions": "MultiTap(tapCount=4)",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "Trick",
+                    "action": "StandUp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "140009f2-fba1-4923-8233-72d4e8194aed",
-                    "path": "<Keyboard>/w",
-                    "interactions": "MultiTap(tapCount=5)",
+                    "id": "6a42e034-b280-46be-8106-c698ea03b29b",
+                    "path": "<Keyboard>/space",
+                    "interactions": "Hold(duration=0.3,pressPoint=0.4)",
                     "processors": "",
                     "groups": "Keyboard",
-                    "action": "StandUp",
+                    "action": "Trick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
