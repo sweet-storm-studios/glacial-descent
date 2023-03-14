@@ -10,19 +10,28 @@ public class PlayerManager : MonoBehaviour
     //Used for ground & obstacle collision check
     public Transform groundCheck;
     public LayerMask groundLayer;
-    public Transform obstacleCheck;
     public LayerMask obstacleLayer;
 
     //For determining ground angle
     public Transform rearRayPosition;
     public Transform frontRayPosition;
 
+    //State machine to change states in player manager
+    public MovementSM _sm;
+
     void Start(){ }
 
     void FixedUpdate()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.position, 1f, groundLayer);
-        collidedWithObstacle = Physics.CheckSphere(obstacleCheck.position, 1f, obstacleLayer);
+        isGrounded = Physics.CheckSphere(groundCheck.position, 1.2f, groundLayer);
+        collidedWithObstacle = Physics.CheckSphere(groundCheck.position, 1.2f, obstacleLayer);
+
+        if(collidedWithObstacle)
+        {
+            transform.position = GameObject.FindGameObjectWithTag("Respawn").transform.position;
+            _sm.ChangeState(_sm.slideState);
+        }
+            
     }
 
     public void setPlayerToGroundAngle()
@@ -49,21 +58,15 @@ public class PlayerManager : MonoBehaviour
             groundAngle = Vector3.Angle(rearHit.normal, Vector3.up);
         }
         else
-        {
             Debug.DrawRay(rearRayPosition.position, rearRayPosition.TransformDirection(-Vector3.up) * 1000, Color.red);
-        }
 
         RaycastHit frontHit;
         Vector3 frontRayStartPos = new Vector3(frontRayPosition.position.x, rearRayPosition.position.y, frontRayPosition.position.z);
         if(Physics.Raycast(frontRayStartPos, frontRayPosition.TransformDirection(-Vector3.up), out frontHit, Mathf.Infinity, groundLayer))
-        {
             Debug.DrawRay(frontRayStartPos, frontRayPosition.TransformDirection(-Vector3.up) * frontHit.distance, Color.yellow);
-        }
 
         if(frontHit.distance > rearHit.distance)
-        {
             groundAngle = -1 * groundAngle;
-        }
         
         return groundAngle;
     }
