@@ -361,7 +361,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467574699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.55, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1411,6 +1411,7 @@ GameObject:
   - component: {fileID: 2056844074}
   - component: {fileID: 2056844075}
   - component: {fileID: 2056844078}
+  - component: {fileID: 2056844079}
   m_Layer: 0
   m_Name: PlayerCube
   m_TagString: Player
@@ -1523,6 +1524,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   rigidbody: {fileID: 2056844075}
+  playerManager: {fileID: 0}
 --- !u!54 &2056844075
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1569,6 +1571,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player Control
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &2056844079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056844063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e30d78a4c841b6458c6da42d8a3ba8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrounded: 0
+  collidedWithObstacle: 0
+  groundCheck: {fileID: 1395840081}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  obstacleCheck: {fileID: 467574700}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1001 &2083645083
 PrefabInstance:
   m_ObjectHideFlags: 0

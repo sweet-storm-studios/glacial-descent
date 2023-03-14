@@ -19,14 +19,11 @@ public class MovementSM : StateMachine
     public float speed = 4f;
     public float jumpForce = 5f;
 
-    //Used for ground & obstacle collision check
-    public Transform groundCheck;
-    public LayerMask groundLayer;
-    public Transform obstacleCheck;
-    public LayerMask obstacleLayer;
-
     //Character controller and rigidbody
     public new Rigidbody rigidbody;
+
+    //PlayerManager class for managing player variables
+    public PlayerManager playerManager;
 
     private void Awake()
     {

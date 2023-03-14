@@ -18,15 +18,11 @@ public class Sliding : BaseState
     {
         base.Update();
 
-        //Check if player is on the ground
-        bool isGrounded = Physics.CheckSphere(_sm.groundCheck.position, 1f, _sm.groundLayer);
-
         if (Mathf.Abs(Input.GetAxis("Jump")) > Mathf.Epsilon)
             stateMachine.ChangeState(_sm.jumpingState);
-        else if(!isGrounded)
+        else if(!_sm.playerManager.isGrounded)
             stateMachine.ChangeState(_sm.fallingState);
-        
-        
+            
         Vector3 vel = _sm.rigidbody.velocity;
         vel.x = _sm.speed;
         _sm.rigidbody.velocity = vel;

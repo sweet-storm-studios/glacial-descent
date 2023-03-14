@@ -13,10 +13,7 @@ public class BaseState
     public virtual void Enter() { }
 
     //Update runs on FixedUpdate (see StateMachine.cs)
-    public virtual void Update() 
-    { 
-
-    }
+    public virtual void Update() { }
 
     public virtual void Exit() { }
 }

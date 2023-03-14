@@ -18,10 +18,7 @@ public class Jumping : BaseState
     {
         base.Update();
 
-        //Check if player is on the ground
-        bool isGrounded = Physics.CheckSphere(_sm.groundCheck.position, 1f, _sm.groundLayer);
-
-        if(isGrounded)
+        if(_sm.playerManager.isGrounded)
             stateMachine.ChangeState(_sm.slideState);
 
         Vector3 vel = _sm.rigidbody.velocity;
