@@ -44,6 +44,13 @@ public class PlayerManager : MonoBehaviour
         transform.eulerAngles = newRotation;
     }
 
+    public void MovePlayer(float speed)
+    {
+        Vector3 vel = _sm.rigidbody.velocity;
+        vel.x = speed;
+        _sm.rigidbody.velocity = vel;
+    }
+
     private float getGroundAngle()
     { 
         float groundAngle = 0;

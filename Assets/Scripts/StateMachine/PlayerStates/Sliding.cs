@@ -25,8 +25,6 @@ public class Sliding : BaseState
         else if(!_sm.playerManager.isGrounded)
             stateMachine.ChangeState(_sm.fallingState);
 
-        Vector3 vel = _sm.rigidbody.velocity;
-        vel.x = _sm.speed;
-        _sm.rigidbody.velocity = vel;
+        _sm.playerManager.MovePlayer(_sm.speed);
     }
 }

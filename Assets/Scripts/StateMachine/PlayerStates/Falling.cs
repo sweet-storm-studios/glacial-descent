@@ -20,8 +20,6 @@ public class Falling : BaseState
         if(_sm.playerManager.isGrounded)
             stateMachine.ChangeState(_sm.slideState);
 
-        Vector3 vel = _sm.rigidbody.velocity;
-        vel.x = _sm.speed;
-        _sm.rigidbody.velocity = vel;
+        _sm.playerManager.MovePlayer(_sm.speed);
     }
 }

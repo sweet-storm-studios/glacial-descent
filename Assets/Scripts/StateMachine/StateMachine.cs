@@ -39,10 +39,10 @@ public class StateMachine : MonoBehaviour
         return currentState;
     }
 
-    //Write text with current status on screen
-    private void OnGUI()
-    {
-        string content = currentState != null ? currentState.name : "(no current state)";
-        GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
-    }
+    //DEBUGGING: UNCOMMENT THIS IF YOU WANT TO: Write text with current status on screen
+    // private void OnGUI()
+    // {
+    //     string content = currentState != null ? currentState.name : "(no current state)";
+    //     GUILayout.Label($"<color='black'><size=40>{content}</size></color>");
+    // }
 }

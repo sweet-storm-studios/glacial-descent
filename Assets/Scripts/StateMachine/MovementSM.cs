@@ -17,6 +17,7 @@ public class MovementSM : StateMachine
 
     //Variables to control moving and jumping; editable in inspector
     public float speed = 4f;
+    public float slippingSpeedDecrease = 0.5f;
     public float jumpForce = 5f;
 
     //Character controller and rigidbody
