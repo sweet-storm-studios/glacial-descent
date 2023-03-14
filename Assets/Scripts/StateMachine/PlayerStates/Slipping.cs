@@ -17,6 +17,8 @@ public class Slipping : BaseState
     {
         base.Update();
 
+        _sm.playerManager.setPlayerToGroundAngle();
+
         Vector3 vel = _sm.rigidbody.velocity;
         vel.x = _sm.speed * 0.5f;
         _sm.rigidbody.velocity = vel;

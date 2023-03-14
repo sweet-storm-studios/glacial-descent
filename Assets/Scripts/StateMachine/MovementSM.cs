@@ -42,11 +42,13 @@ public class MovementSM : StateMachine
 
     void OnTrick()
     {
-        jumpingState.DoTrick();
+        if(GetCurrentState() == jumpingState)
+            jumpingState.DoTrick();
     }
 
     void OnStandUp()
     {
-        slippingState.StandUp();
+        if(GetCurrentState() == slippingState)
+            slippingState.StandUp();
     }
 }

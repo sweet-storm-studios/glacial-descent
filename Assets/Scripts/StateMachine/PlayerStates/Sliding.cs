@@ -18,11 +18,13 @@ public class Sliding : BaseState
     {
         base.Update();
 
+        _sm.playerManager.setPlayerToGroundAngle();
+
         if (Mathf.Abs(Input.GetAxis("Jump")) > Mathf.Epsilon)
             stateMachine.ChangeState(_sm.jumpingState);
         else if(!_sm.playerManager.isGrounded)
             stateMachine.ChangeState(_sm.fallingState);
-            
+
         Vector3 vel = _sm.rigidbody.velocity;
         vel.x = _sm.speed;
         _sm.rigidbody.velocity = vel;

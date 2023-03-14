@@ -34,6 +34,11 @@ public class StateMachine : MonoBehaviour
         return null;
     }
 
+    public BaseState GetCurrentState()
+    {
+        return currentState;
+    }
+
     //Write text with current status on screen
     private void OnGUI()
     {
